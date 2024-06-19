@@ -1,0 +1,258 @@
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: LeagueSpartan;
+    src: url("LeagueSpartan-Bold.ttf");
+}
+
+.container {
+    max-width: 1536px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    height: fit-content;
+    display: grid;
+    place-content: center;
+}
+
+:root {
+    --Background: hsl(222, 26%, 31%);
+    --Keypad: hsl(223, 31%, 20%);
+    --Screen: hsl(224, 36%, 15%);
+    --Del: hsl(225, 21%, 49%);
+    --DelHover: hsl(225, 21%, 60%);
+    --DelShadow: hsl(224, 28%, 35%);
+    --Red: hsl(6, 63%, 50%);
+    --RedHover: hsl(6, 63%, 60%);
+    --Darkred: hsl(6, 70%, 34%);
+    --Key: hsl(30, 25%, 89%);
+    --KeyHover: hsl(30, 25%, 100%);
+    --KeyShadow: hsl(28, 16%, 65%);
+    --Text: hsl(221, 14%, 31%);
+    --TextScreen: hsl(0, 0%, 100%);
+    --TextTop: hsl(0, 0%, 100%);
+    --TextEqual: hsl(0, 0%, 100%);
+    --White: hsl(0, 0%, 100%);
+}
+
+body {
+    background-color: var(--Background);
+    font-family: LeagueSpartan;
+}
+
+.calc {
+    background-color: var(--Background);
+    width: 539px;
+    height: 712px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 27px;
+}
+
+.top {
+    height: 54px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    color: var(--TextTop);
+}
+
+.logo {
+    font-size: 1.5rem
+}
+
+.theme {
+    width: 140px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.text {
+    font-size: 0.7rem
+}
+
+.choose {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: -7px;
+}
+
+.choose .text {
+    letter-spacing: 10px;
+    margin-left: 5px;
+}
+
+.slider {
+    background-color: var(--Keypad);
+    width: 80px;
+    height: 25px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    margin-left: -4px;
+}
+
+.slider.one {
+    justify-content: start;
+}
+
+.slider.two {
+    justify-content: center;
+}
+
+.slider.three {
+    justify-content: end;
+}
+
+.ball {
+    width: 20%;
+    aspect-ratio: 1/1;
+    background-color: var(--Red);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.ball:hover,
+.buttons .equal:hover {
+    background-color: var(--RedHover)
+}
+
+.screen {
+    height: 128px;
+    background-color: var(--Screen);
+    border-radius: 10px;
+    text-align: end;
+    padding: 43px 20px;
+    font-size: 3rem;
+    color: var(--TextScreen);
+}
+
+.buttons {
+    height: 480px;
+    background-color: var(--Keypad);
+    border-radius: 10px;
+    padding: 30px;
+    display: grid;
+    grid-template: repeat(5, 1fr)/ repeat(4, 1fr);
+    gap: 30px;
+}
+
+.buttons div {
+    font-size: 2rem;
+    border-radius: 10px;
+}
+
+.buttons .nor {
+    background-color: var(--Key);
+    padding-top: 20px;
+    text-align: center;
+    color: var(--Text);
+    box-shadow: 0px 5px 0 0 var(--KeyShadow);
+    cursor: pointer;
+}
+
+.buttons .nor:hover {
+    background-color: var(--KeyHover);
+}
+
+.buttons .del,
+.buttons .reset {
+    background-color: var(--Del);
+    box-shadow: 0px 5px 0 0 var(--DelShadow);
+    color: var(--White);
+    padding-top: 18px;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+.buttons .del:hover,
+.buttons .reset:hover {
+    background-color: var(--DelHover)
+}
+
+.buttons .equal {
+    grid-area: 5/3/6/5;
+    background-color: var(--Red);
+    padding-top: 20px;
+    text-align: center;
+    color: var(--TextEqual);
+    box-shadow: 0px 5px 0 0 var(--Darkred);
+    cursor: pointer;
+}
+
+.buttons .reset {
+    grid-area: 5/1/6/3;
+}
+
+/* 2xl */
+@media (max-width: 1536px) {
+    .container {
+        max-width: 1280px;
+    }
+}
+
+/* xl */
+@media (max-width: 1280px) {
+    .container {
+        max-width: 1024px;
+    }
+}
+
+/* lg */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 768px;
+    }
+}
+
+/* md */
+@media (max-width: 768px) {
+    .container {
+        max-width: 640px;
+    }
+}
+
+/* sm */
+@media (max-width: 640px) {
+    .container {
+        max-width: 475px;
+    }
+
+    .calc {
+        width: 450px;
+    }
+}
+
+/* xs */
+@media (max-width: 475px) {
+    .container {
+        width: 100%;
+    }
+
+    .calc {
+        width: 100%;
+    }
+
+    .buttons {
+        gap: 10px;
+    }
+}
